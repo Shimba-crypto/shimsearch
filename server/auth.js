@@ -103,7 +103,7 @@ export function verifyToken(token) {
 }
 
 export function requireAuth(req, res, next) {
-  const token = req.headers["x-search-token"] || req.query.token;
+  const token = req.cookies?.nsp_token || req.headers["x-search-token"] || req.query.token;
   const user = verifyToken(token);
   if (!user) return res.status(401).json({ error: "login required" });
   req.user = user;
