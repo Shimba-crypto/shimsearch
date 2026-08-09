@@ -27,10 +27,32 @@ app.get("/api/auth/sso", (req, res) => {
   res.redirect(`${ALLID}/sso/authorize?client_id=shimsearch&redirect_uri=${encodeURIComponent("https://shimsearch.onrender.com/api/auth/sso/callback")}`);
 });
 
-app.get("/api/auth/sso/callback", (req, res) => {
+app.get("/api/auth/sso/callback", async (req, res) => {
   const { sso_token } = req.query;
   if (!sso_token) return res.redirect("/login?error=sso_failed");
-  res.redirect(`/dashboard?sso=1&sso_token=${sso_token}`);
+  try {
+    // Verify sso_token with AllID
+    const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${sso_token}`, { signal: AbortSignal.timeout(15000) });
+    const d = await r.json();
+    if (!d.ok) return res.redirect("/login?error=sso_failed");
+
+    // Find or create local user
+    let user = findUserByEmail(d.student.email);
+    if (!user) {
+      createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.student.email);
+    }
+
+    // Issue ShimSearch token + set cookie
+    const token = signToken({ userId: user.id, email: user.email });
+    const tokens = readJSON("tokens.json") || [];
+    tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+    writeJSON("tokens.json", tokens);
+    res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
+    res.redirect("/dashboard");
+  } catch {
+    res.redirect("/login?error=sso_failed");
+  }
 });
 
 app.post("/api/auth/sso/allid", async (req, res) => {
