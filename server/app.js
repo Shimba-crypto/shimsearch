@@ -8,6 +8,8 @@ import { freeLimiter, authLimiter, securityHeaders, sanitize, validEmail, trackU
 import { search, suggest, indexPapers, indexSchools, indexHealth, indexLaws, getStats, seedFromEcosystem } from "./search.js";
 import { createProSubscription, getSubscription, isPro, chargeQuery, getBilling, checkQuota, priceList } from "./billing.js";
 
+const ALLID_SSO = "https://allid.onrender.com";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, "..", "dist");
 
@@ -18,6 +20,33 @@ app.use(securityHeaders);
 
 app.get("/api/health", (req, res) => {
   res.json({ ok: true, time: new Date().toISOString(), ...getStats() });
+});
+
+/* ── SSO: Login with AllID ─────────────────────────── */
+app.post("/api/auth/sso/allid", async (req, res) => {
+  const { token } = req.body || {};
+  if (!token) return res.status(400).json({ error: "token required" });
+  try {
+    const r = await fetch(`${ALLID_SSO}/api/sso/verify`, { headers: { "X-Allid-Token": token } });
+    const d = await r.json();
+    if (!d.ok) return res.status(401).json({ error: "invalid AllID token" });
+
+    let user = findUserByEmail(d.student.email);
+    if (!user) {
+      createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.student.email);
+    }
+
+    // Issue ShimSearch token directly
+    const tokens = readJSON("tokens.json") || [];
+    const newToken = "sst_sso_" + crypto.randomBytes(24).toString("hex");
+    tokens.push({ token: newToken, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+    writeJSON("tokens.json", tokens);
+
+    res.json({ token: newToken, user: publicUser(user), sso: "allid" });
+  } catch (e) {
+    res.status(500).json({ error: "sso failed" });
+  }
 });
 
 /* ── auth (hardened) ───────────────────────────────── */
