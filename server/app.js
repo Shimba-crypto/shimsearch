@@ -27,32 +27,32 @@ app.get("/api/auth/sso", (req, res) => {
   res.redirect(`${ALLID}/sso/authorize?client_id=shimsearch&redirect_uri=${encodeURIComponent("https://shimsearch.onrender.com/api/auth/sso/callback")}`);
 });
 
-app.get("/api/auth/sso/callback", async (req, res) => {
+app.get("/api/auth/sso/callback", (req, res) => {
   const { sso_token } = req.query;
   if (!sso_token) return res.redirect("/login?error=sso_failed");
-  let lastErr;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${sso_token}`, { signal: AbortSignal.timeout(20000) });
-      const d = await r.json();
-      if (!d.ok) return res.redirect("/login?error=sso_failed");
-      let user = findUserByEmail(d.student.email);
-      if (!user) {
-        createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
-        user = findUserByEmail(d.student.email);
-      }
-      const token = signToken({ userId: user.id, email: user.email });
-      const tokens = readJSON("tokens.json") || [];
-      tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
-      writeJSON("tokens.json", tokens);
-      res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
-      return res.redirect("/dashboard");
-    } catch (e) {
-      lastErr = e;
-      await new Promise((r) => setTimeout(r, 2000));
+  // Redirect to dashboard with sso_token — browser verifies client-side (AllID has CORS *)
+  res.redirect(`/dashboard?sso_token=${sso_token}`);
+});
+
+// Dashboard calls this after verifying sso_token with AllID client-side
+app.post("/api/auth/sso/verify", async (req, res) => {
+  const { name, email } = req.body || {};
+  if (!name || !email) return res.status(400).json({ error: "name and email required" });
+  try {
+    let user = findUserByEmail(email);
+    if (!user) {
+      createUser({ name, email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(email);
     }
+    const token = signToken({ userId: user.id, email: user.email });
+    const tokens = readJSON("tokens.json") || [];
+    tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+    writeJSON("tokens.json", tokens);
+    res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
+    res.json({ ok: true, token, user: publicUser(user) });
+  } catch {
+    res.status(500).json({ error: "failed" });
   }
-  res.redirect("/login?error=sso_failed");
 });
 app.post("/api/auth/sso/allid", async (req, res) => {
   const { token } = req.body || {};
