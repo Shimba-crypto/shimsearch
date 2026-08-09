@@ -2,57 +2,44 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../lib/usePageTitle";
 
-const ALLID = "https://allid.onrender.com";
-
 export default function Dashboard({ token, user, setToken }: { token: string; user: any; setToken?: (t: string) => void; }) {
   usePageTitle("Dashboard");
   const [sub, setSub] = useState<any>(null);
   const [usage, setUsage] = useState<any>(null);
-  const [ssoStatus, setSsoStatus] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Handle SSO login
-    const params = new URLSearchParams(window.location.search);
-    const ssoToken = params.get("sso_token");
-    if (params.get("sso") === "1" && ssoToken && setToken) {
-      setSsoStatus("verifying...");
-      fetch(`${ALLID}/api/sso/verify?sso_token=${ssoToken}`)
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.ok) {
-            // Create local session via SSO
-            return fetch("/api/auth/sso/allid", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ token: ssoToken }),
-            }).then((r) => r.json());
-          }
-          throw new Error("invalid");
-        })
-        .then((d) => {
-          if (d.token) {
-            setToken(d.token);
-            window.history.replaceState({}, "", "/dashboard");
-          } else {
-            setSsoStatus("sso failed");
-          }
-        })
-        .catch(() => setSsoStatus("sso failed"));
-    }
-  }, [setToken]);
+    // Try cookie-based auth first (SSO), then token-based
+    fetch("/api/user/me")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d) {
+          setToken?.(d.token || "");
+          setLoading(false);
+        } else if (token) {
+          fetch("/api/user/me", { headers: { "X-User-Token": token } })
+            .then((r) => (r.ok ? r.json() : null))
+            .then((d2) => { if (d2) setToken?.(d2.token || ""); setLoading(false); })
+            .catch(() => setLoading(false));
+        } else {
+          setLoading(false);
+        }
+      })
+      .catch(() => setLoading(false));
+  }, [token]);
 
   useEffect(() => {
     if (!token) return;
-    fetch("/api/billing/subscription", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
-    fetch("/api/billing/usage", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
+    fetch("/api/billing/subscription", { headers: { "X-User-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
+    fetch("/api/billing/usage", { headers: { "X-User-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
   }, [token]);
 
-  if (ssoStatus === "verifying...") return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Verifying AllID login...</p></div>;
+  if (loading) return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Loading...</p></div>;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-10">
-      <h1 className="text-2xl font-semibold">Dashboard</h1>
-      <p className="text-sm text-gray-500 mt-1">{user?.email}</p>
+      <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+      <p className="text-sm text-gray-500 mt-1">{user?.email || "..."}</p>
       <div className="mt-6 grid sm:grid-cols-3 gap-3">
         <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{sub?.tier || "free"}</p><p className="text-xs text-gray-500">Tier</p></div>
         <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{usage?.count || 0}</p><p className="text-xs text-gray-500">Searches today</p></div>
