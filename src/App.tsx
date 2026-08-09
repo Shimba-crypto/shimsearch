@@ -16,6 +16,17 @@ export default function App() {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
+    // Handle SSO redirect token
+    const params = new URLSearchParams(window.location.search);
+    const ssoToken = params.get("token");
+    if (ssoToken && params.get("sso") === "1") {
+      localStorage.setItem("ss-token", ssoToken);
+      setToken(ssoToken);
+      window.history.replaceState({}, "", "/dashboard");
+    }
+  }, []);
+
+  useEffect(() => {
     if (token) {
       localStorage.setItem("ss-token", token);
       fetch("/api/auth/me", { headers: { "X-Search-Token": token } })

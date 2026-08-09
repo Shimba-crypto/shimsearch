@@ -49,6 +49,52 @@ app.post("/api/auth/sso/allid", async (req, res) => {
   }
 });
 
+/* ── SSO: Login with AllID (OAuth2 redirect flow) ── */
+const ALLID = "https://allid.onrender.com";
+const CLIENT_ID = "shimsearch";
+const REDIRECT_URI = "https://shimsearch.onrender.com/api/auth/sso/callback";
+
+// Step 1: Redirect user to AllID authorize
+app.get("/api/auth/sso", (req, res) => {
+  const url = `${ALLID}/sso/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
+  res.redirect(url);
+});
+
+// Step 2: AllID redirects back with code
+app.get("/api/auth/sso/callback", async (req, res) => {
+  const { code } = req.query;
+  if (!code) return res.redirect("/login?error=sso_failed");
+
+  try {
+    // Exchange code for student info
+    const r = await fetch(`${ALLID}/sso/exchange`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    const d = await r.json();
+    if (!d.ok) return res.redirect("/login?error=sso_failed");
+
+    // Find or create local user
+    let user = findUserByEmail(d.student.email);
+    if (!user) {
+      createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.student.email);
+    }
+
+    // Issue ShimSearch token
+    const tokens = readJSON("tokens.json") || [];
+    const token = "sst_sso_" + crypto.randomBytes(24).toString("hex");
+    tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+    writeJSON("tokens.json", tokens);
+
+    // Redirect to dashboard with token in cookie/localStorage hint
+    res.redirect(`/dashboard?sso=1&token=${token}`);
+  } catch (e) {
+    res.redirect("/login?error=sso_failed");
+  }
+});
+
 /* ── auth (hardened) ───────────────────────────────── */
 app.post("/api/auth/register", authLimiter, (req, res) => {
   const { name, email, password } = req.body || {};
