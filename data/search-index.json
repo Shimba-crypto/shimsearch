@@ -1,0 +1,3445 @@
+{
+  "papers": [
+    {
+      "id": "paper-001",
+      "title": "G6 ECZ Mathematics 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-002",
+      "title": "G6 ECZ Mathematics 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-003",
+      "title": "G6 ECZ Mathematics 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-004",
+      "title": "G7 ECZ Mathematics 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-005",
+      "title": "G7 ECZ Mathematics 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-006",
+      "title": "G7 ECZ Mathematics 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-007",
+      "title": "G7 ECZ Mathematics 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-008",
+      "title": "G7 ECZ Mathematics 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-009",
+      "title": "G7 ECZ Mathematics 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-010",
+      "title": "G6 ECZ English Language 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-011",
+      "title": "G6 ECZ English Language 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-012",
+      "title": "G6 ECZ English Language 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-013",
+      "title": "G7 ECZ English Language 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-014",
+      "title": "G7 ECZ English Language 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-015",
+      "title": "G7 ECZ English Language 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-016",
+      "title": "G7 ECZ English Language 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-017",
+      "title": "G7 ECZ English Language 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-018",
+      "title": "G7 ECZ English Language 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-019",
+      "title": "G6 ECZ Physics 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-020",
+      "title": "G6 ECZ Physics 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-021",
+      "title": "G6 ECZ Physics 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-022",
+      "title": "G7 ECZ Physics 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-023",
+      "title": "G7 ECZ Physics 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-024",
+      "title": "G7 ECZ Physics 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-025",
+      "title": "G7 ECZ Physics 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-026",
+      "title": "G7 ECZ Physics 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-027",
+      "title": "G7 ECZ Physics 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-028",
+      "title": "G6 ECZ Chemistry 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-029",
+      "title": "G6 ECZ Chemistry 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-030",
+      "title": "G6 ECZ Chemistry 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-031",
+      "title": "G7 ECZ Chemistry 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-032",
+      "title": "G7 ECZ Chemistry 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-033",
+      "title": "G7 ECZ Chemistry 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-034",
+      "title": "G7 ECZ Chemistry 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-035",
+      "title": "G7 ECZ Chemistry 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-036",
+      "title": "G7 ECZ Chemistry 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-037",
+      "title": "G6 ECZ Biology 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-038",
+      "title": "G6 ECZ Biology 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-039",
+      "title": "G6 ECZ Biology 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-040",
+      "title": "G7 ECZ Biology 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-041",
+      "title": "G7 ECZ Biology 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-042",
+      "title": "G7 ECZ Biology 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-043",
+      "title": "G7 ECZ Biology 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-044",
+      "title": "G7 ECZ Biology 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-045",
+      "title": "G7 ECZ Biology 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-046",
+      "title": "G6 ECZ Geography 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-047",
+      "title": "G6 ECZ Geography 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-048",
+      "title": "G6 ECZ Geography 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-049",
+      "title": "G7 ECZ Geography 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-050",
+      "title": "G7 ECZ Geography 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-051",
+      "title": "G7 ECZ Geography 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-052",
+      "title": "G7 ECZ Geography 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-053",
+      "title": "G7 ECZ Geography 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-054",
+      "title": "G7 ECZ Geography 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-055",
+      "title": "G6 ECZ History 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-056",
+      "title": "G6 ECZ History 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-057",
+      "title": "G6 ECZ History 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-058",
+      "title": "G7 ECZ History 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-059",
+      "title": "G7 ECZ History 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-060",
+      "title": "G7 ECZ History 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-061",
+      "title": "G7 ECZ History 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-062",
+      "title": "G7 ECZ History 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-063",
+      "title": "G7 ECZ History 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-073",
+      "title": "G6 ECZ Religious Education 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-074",
+      "title": "G6 ECZ Religious Education 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-075",
+      "title": "G6 ECZ Religious Education 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-076",
+      "title": "G7 ECZ Religious Education 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-077",
+      "title": "G7 ECZ Religious Education 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-078",
+      "title": "G7 ECZ Religious Education 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-079",
+      "title": "G7 ECZ Religious Education 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-080",
+      "title": "G7 ECZ Religious Education 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-081",
+      "title": "G7 ECZ Religious Education 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-091",
+      "title": "G6 ECZ Commerce 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-092",
+      "title": "G6 ECZ Commerce 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-093",
+      "title": "G6 ECZ Commerce 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-094",
+      "title": "G7 ECZ Commerce 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-095",
+      "title": "G7 ECZ Commerce 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-096",
+      "title": "G7 ECZ Commerce 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-097",
+      "title": "G7 ECZ Commerce 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-098",
+      "title": "G7 ECZ Commerce 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-099",
+      "title": "G7 ECZ Commerce 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-109",
+      "title": "G6 ECZ Science 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-110",
+      "title": "G6 ECZ Science 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-111",
+      "title": "G6 ECZ Science 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-112",
+      "title": "G7 ECZ Science 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-113",
+      "title": "G7 ECZ Science 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-114",
+      "title": "G7 ECZ Science 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-115",
+      "title": "G7 ECZ Science 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-116",
+      "title": "G7 ECZ Science 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-117",
+      "title": "G7 ECZ Science 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-118",
+      "title": "G6 ECZ Social Studies 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-119",
+      "title": "G6 ECZ Social Studies 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-120",
+      "title": "G6 ECZ Social Studies 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-121",
+      "title": "G7 ECZ Social Studies 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-122",
+      "title": "G7 ECZ Social Studies 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-123",
+      "title": "G7 ECZ Social Studies 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-124",
+      "title": "G7 ECZ Social Studies 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-125",
+      "title": "G7 ECZ Social Studies 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-126",
+      "title": "G7 ECZ Social Studies 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-127",
+      "title": "G6 ECZ Principles of Accounts 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-128",
+      "title": "G6 ECZ Principles of Accounts 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-129",
+      "title": "G6 ECZ Principles of Accounts 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-130",
+      "title": "G7 ECZ Principles of Accounts 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-131",
+      "title": "G7 ECZ Principles of Accounts 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-132",
+      "title": "G7 ECZ Principles of Accounts 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-133",
+      "title": "G7 ECZ Principles of Accounts 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-134",
+      "title": "G7 ECZ Principles of Accounts 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-135",
+      "title": "G7 ECZ Principles of Accounts 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-136",
+      "title": "G6 ECZ Agricultural Science 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-137",
+      "title": "G6 ECZ Agricultural Science 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-138",
+      "title": "G6 ECZ Agricultural Science 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-139",
+      "title": "G7 ECZ Agricultural Science 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-140",
+      "title": "G7 ECZ Agricultural Science 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-141",
+      "title": "G7 ECZ Agricultural Science 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-142",
+      "title": "G7 ECZ Agricultural Science 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-143",
+      "title": "G7 ECZ Agricultural Science 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-144",
+      "title": "G7 ECZ Agricultural Science 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-145",
+      "title": "G6 ECZ English Literature 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-146",
+      "title": "G6 ECZ English Literature 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-147",
+      "title": "G6 ECZ English Literature 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-148",
+      "title": "G7 ECZ English Literature 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-149",
+      "title": "G7 ECZ English Literature 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-150",
+      "title": "G7 ECZ English Literature 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-151",
+      "title": "G7 ECZ English Literature 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-152",
+      "title": "G7 ECZ English Literature 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-153",
+      "title": "G7 ECZ English Literature 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-154",
+      "title": "G6 ECZ Integrated Science 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-155",
+      "title": "G6 ECZ Integrated Science 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-156",
+      "title": "G6 ECZ Integrated Science 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-157",
+      "title": "G7 ECZ Integrated Science 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-158",
+      "title": "G7 ECZ Integrated Science 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-159",
+      "title": "G7 ECZ Integrated Science 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-160",
+      "title": "G7 ECZ Integrated Science 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-161",
+      "title": "G7 ECZ Integrated Science 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-162",
+      "title": "G7 ECZ Integrated Science 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-163",
+      "title": "G6 ECZ Creative and Technology Studies 2022",
+      "subject": "",
+      "grade": 6,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-164",
+      "title": "G6 ECZ Creative and Technology Studies 2023",
+      "subject": "",
+      "grade": 6,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-165",
+      "title": "G6 ECZ Creative and Technology Studies 2024",
+      "subject": "",
+      "grade": 6,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-166",
+      "title": "G7 ECZ Creative and Technology Studies 2022",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-167",
+      "title": "G7 ECZ Creative and Technology Studies 2022 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-168",
+      "title": "G7 ECZ Creative and Technology Studies 2023",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-169",
+      "title": "G7 ECZ Creative and Technology Studies 2023 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-170",
+      "title": "G7 ECZ Creative and Technology Studies 2024",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-171",
+      "title": "G7 ECZ Creative and Technology Studies 2024 P2",
+      "subject": "",
+      "grade": 7,
+      "year": 2024,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-173",
+      "title": "G12 ECZ Mathematics 2012 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2012,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-175",
+      "title": "G12 ECZ Mathematics 2011 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2011,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-177",
+      "title": "G12 ECZ Mathematics 2011 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2011,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-179",
+      "title": "G12 ECZ Mathematics 2010 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2010,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-181",
+      "title": "G12 ECZ Mathematics 2010 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2010,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-183",
+      "title": "G12 ECZ Mathematics 2009 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2009,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-185",
+      "title": "G12 ECZ Mathematics 2009 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2009,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-187",
+      "title": "G12 ECZ Science 2023 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2023,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-189",
+      "title": "G12 ECZ Science 2022 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-191",
+      "title": "G12 ECZ Science 2022 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2022,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-193",
+      "title": "G12 ECZ Science 2021 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2021,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-195",
+      "title": "G12 ECZ Science 2021 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2021,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-197",
+      "title": "G12 ECZ Science 2020 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2020,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-199",
+      "title": "G12 ECZ Science 2017 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2017,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-201",
+      "title": "G12 ECZ Science 2017 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2017,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-203",
+      "title": "G12 ECZ Science 2016 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2016,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-205",
+      "title": "G12 ECZ Science 2016 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2016,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-207",
+      "title": "G12 ECZ Science 2015 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2015,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-209",
+      "title": "G12 ECZ Science 2014 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2014,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-211",
+      "title": "G12 ECZ Science 2013 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2013,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-213",
+      "title": "G12 ECZ Science 2013 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2013,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-215",
+      "title": "G12 ECZ Science 2013 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2013,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-217",
+      "title": "G12 ECZ Science 2012 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2012,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-219",
+      "title": "G12 ECZ Science 2012 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2012,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-221",
+      "title": "G12 ECZ Science 2012 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2012,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-223",
+      "title": "G12 ECZ Science 2011 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2011,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-225",
+      "title": "G12 ECZ Science 2011 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2011,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-227",
+      "title": "G12 ECZ Science 2011 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2011,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-229",
+      "title": "G12 ECZ Science 2010 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2010,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-231",
+      "title": "G12 ECZ Science 2010 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2010,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-233",
+      "title": "G12 ECZ Science 2010 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2010,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-235",
+      "title": "G12 ECZ Science 2009 Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2009,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-237",
+      "title": "G12 ECZ Science 2009 Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2009,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-239",
+      "title": "G12 ECZ Science 2009 Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2009,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-241",
+      "title": "G7 ECZ Creative and Technology Studies",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-243",
+      "title": "G7 ECZ English Language",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-245",
+      "title": "G7 ECZ Integrated Science",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-247",
+      "title": "G7 ECZ Mathematics",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-249",
+      "title": "G7 ECZ Social Studies",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-251",
+      "title": "G7 ECZ Special Paper 1",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-253",
+      "title": "G7 ECZ Special Paper 2",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-255",
+      "title": "G7 ECZ Cinyanja",
+      "subject": "",
+      "grade": 7,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-257",
+      "title": "G9 ECZ Art and Design Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-259",
+      "title": "G9 ECZ Art and Design Paper 3",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-261",
+      "title": "G9 ECZ Business Studies",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-263",
+      "title": "G9 ECZ Chitonga Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-265",
+      "title": "G9 ECZ Chitonga Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-267",
+      "title": "G9 ECZ Cinyanja Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-269",
+      "title": "G9 ECZ Cinyanja Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-271",
+      "title": "G9 ECZ Civics",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-273",
+      "title": "G9 ECZ Computer Studies Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-275",
+      "title": "G9 ECZ Computer Studies Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-277",
+      "title": "G9 ECZ Design and Technology Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-279",
+      "title": "G9 ECZ Design and Technology Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-281",
+      "title": "G9 ECZ Design and Technology Paper 3",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-283",
+      "title": "G9 ECZ English Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-285",
+      "title": "G9 ECZ English Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-287",
+      "title": "G9 ECZ French Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-289",
+      "title": "G9 ECZ French Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-291",
+      "title": "G9 ECZ Geography Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-293",
+      "title": "G9 ECZ Geography Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-295",
+      "title": "G9 ECZ History Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-297",
+      "title": "G9 ECZ Home Economics Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-299",
+      "title": "G9 ECZ Home Economics Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-301",
+      "title": "G9 ECZ ICibemba Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-303",
+      "title": "G9 ECZ ICibemba Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-305",
+      "title": "G9 ECZ Kiikaonde Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-307",
+      "title": "G9 ECZ Kiikaonde Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-309",
+      "title": "G9 ECZ Lunda Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-311",
+      "title": "G9 ECZ Lunda Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-313",
+      "title": "G9 ECZ Luvale Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-315",
+      "title": "G9 ECZ Luvale Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-317",
+      "title": "G9 ECZ Mathematics Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-319",
+      "title": "G9 ECZ Mathematics Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-321",
+      "title": "G9 ECZ Office Practice",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-323",
+      "title": "G9 ECZ Physical Education Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-325",
+      "title": "G9 ECZ Physical Education Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-327",
+      "title": "G9 ECZ Religious Education",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-329",
+      "title": "G9 ECZ Science Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-331",
+      "title": "G9 ECZ Science Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-333",
+      "title": "G9 ECZ Science Paper 3",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-335",
+      "title": "G9 ECZ Silozi Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-337",
+      "title": "G9 ECZ Silozi Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-339",
+      "title": "G9 ECZ Social Studies Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-341",
+      "title": "G9 ECZ Social Studies Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-343",
+      "title": "G9 ECZ Agricultural Science Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-345",
+      "title": "G9 ECZ Agricultural Science Paper 2",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-347",
+      "title": "G9 ECZ Art and Design Paper 1",
+      "subject": "",
+      "grade": 9,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-349",
+      "title": "G12 ECZ Additional Mathematics Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-351",
+      "title": "G12 ECZ Agricultural Science Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-353",
+      "title": "G12 ECZ Agricultural Science Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-355",
+      "title": "G12 ECZ Art and Design Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-357",
+      "title": "G12 ECZ Art and Design Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-359",
+      "title": "G12 ECZ Art and Design Paper 4",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-361",
+      "title": "G12 ECZ Biology Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-363",
+      "title": "G12 ECZ Biology Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-365",
+      "title": "G12 ECZ Biology Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-367",
+      "title": "G12 ECZ Biology Paper 6",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-369",
+      "title": "G12 ECZ Chemistry Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-371",
+      "title": "G12 ECZ Chemistry Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-373",
+      "title": "G12 ECZ Chemistry Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-375",
+      "title": "G12 ECZ Chinese",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-377",
+      "title": "G12 ECZ Chitonga Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-379",
+      "title": "G12 ECZ Chitonga Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-381",
+      "title": "G12 ECZ Cinyanja Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-383",
+      "title": "G12 ECZ Cinyanja Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-385",
+      "title": "G12 ECZ Civic Education Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-387",
+      "title": "G12 ECZ Civic Education Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-389",
+      "title": "G12 ECZ Commerce",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-391",
+      "title": "G12 ECZ Computer Studies Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-393",
+      "title": "G12 ECZ Computer Studies Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-395",
+      "title": "G12 ECZ Design and Technology Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-397",
+      "title": "G12 ECZ Design and Technology Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-399",
+      "title": "G12 ECZ English Language Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-401",
+      "title": "G12 ECZ English Language Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-403",
+      "title": "G12 ECZ Fashion and Fabrics Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-405",
+      "title": "G12 ECZ Fashion and Fabrics Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-407",
+      "title": "G12 ECZ French Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-409",
+      "title": "G12 ECZ French Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-411",
+      "title": "G12 ECZ French Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-413",
+      "title": "G12 ECZ French Paper 5",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-415",
+      "title": "G12 ECZ Geography Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-417",
+      "title": "G12 ECZ Geography Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-419",
+      "title": "G12 ECZ Geometrical and Mechanical Drawing Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-421",
+      "title": "G12 ECZ Geometrical and Mechanical Drawing Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-423",
+      "title": "G12 ECZ History Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-425",
+      "title": "G12 ECZ History Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-427",
+      "title": "G12 ECZ ICibemba Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-429",
+      "title": "G12 ECZ Kiikaonde Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-431",
+      "title": "G12 ECZ Kiikaonde Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-433",
+      "title": "G12 ECZ Literature Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-435",
+      "title": "G12 ECZ Literature Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-437",
+      "title": "G12 ECZ Lunda Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-439",
+      "title": "G12 ECZ Lunda Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-441",
+      "title": "G12 ECZ Luvale Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-443",
+      "title": "G12 ECZ Luvale Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-445",
+      "title": "G12 ECZ Mathematics Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-447",
+      "title": "G12 ECZ Mathematics Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-449",
+      "title": "G12 ECZ Metal Work Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-451",
+      "title": "G12 ECZ Metal Work Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-453",
+      "title": "G12 ECZ Musical Arts Education Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-455",
+      "title": "G12 ECZ Musical Arts Education Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-457",
+      "title": "G12 ECZ Musical Arts Education Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-459",
+      "title": "G12 ECZ Musical Arts Education Paper 4",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-461",
+      "title": "G12 ECZ Physical Education",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-463",
+      "title": "G12 ECZ Physics Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-465",
+      "title": "G12 ECZ Physics Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-467",
+      "title": "G12 ECZ Physics Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-469",
+      "title": "G12 ECZ Principles of Accounts Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-471",
+      "title": "G12 ECZ Principles of Accounts Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-473",
+      "title": "G12 ECZ Religious Education (2044)",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-475",
+      "title": "G12 ECZ Religious Education (2046)",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-477",
+      "title": "G12 ECZ Science Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-479",
+      "title": "G12 ECZ Science Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-481",
+      "title": "G12 ECZ Science Paper 3",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-483",
+      "title": "G12 ECZ Silozi Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-485",
+      "title": "G12 ECZ Silozi Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-487",
+      "title": "G12 ECZ Woodwork Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-489",
+      "title": "G12 ECZ Woodwork Paper 2",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    },
+    {
+      "id": "paper-491",
+      "title": "G12 ECZ Additional Mathematics Paper 1",
+      "subject": "",
+      "grade": 12,
+      "year": 2026,
+      "source": "ShimbaData",
+      "type": "paper"
+    }
+  ],
+  "schools": [],
+  "health": [],
+  "laws": [
+    {
+      "id": "law_1786270826654_n0x1",
+      "title": "Constitution of Zambia",
+      "year": 2016,
+      "category": "Constitutional",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_4s6e",
+      "title": "Penal Code Act",
+      "year": 1930,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_mt2x",
+      "title": "Criminal Procedure Code Act",
+      "year": 1930,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_wfdj",
+      "title": "Anti-Corruption Act",
+      "year": 2012,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_rvin",
+      "title": "Anti-Terrorism and Non-Proliferation Act",
+      "year": 2018,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_ki6a",
+      "title": "Anti-Gender-Based Violence Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_gwxs",
+      "title": "Public Order Act",
+      "year": 1955,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_nmmw",
+      "title": "Police Act",
+      "year": 1995,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_q3dq",
+      "title": "Defence Act",
+      "year": 1964,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_f2r0",
+      "title": "Presidential Emoluments Act",
+      "year": 2015,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_ug4m",
+      "title": "Elections Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_uy02",
+      "title": "Electoral Commission of Zambia Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_msmy",
+      "title": "Political Parties Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_swbg",
+      "title": "Local Government Act",
+      "year": 2019,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_mcja",
+      "title": "Public Finance Management Act",
+      "year": 2018,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_60gm",
+      "title": "Audit Service Act",
+      "year": 1980,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_1mwo",
+      "title": "Revenue Authority Act",
+      "year": 1993,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_8amm",
+      "title": "Income Tax Act",
+      "year": 1966,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_bwl1",
+      "title": "Value Added Tax Act",
+      "year": 1995,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_xue5",
+      "title": "Customs and Excise Act",
+      "year": 1965,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_awkr",
+      "title": "Banking and Financial Services Act",
+      "year": 2026,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_2u4o",
+      "title": "Bank of Zambia Act",
+      "year": 1996,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_0b4m",
+      "title": "Securities Act",
+      "year": 1993,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_txhp",
+      "title": "Insurance Act",
+      "year": 1997,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_mm4g",
+      "title": "Companies Act",
+      "year": 1994,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_88q5",
+      "title": "Partnership Act",
+      "year": 1938,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_4sdt",
+      "title": "Competition and Consumer Protection Act",
+      "year": 2010,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_uh16",
+      "title": "Bankruptcy Act",
+      "year": 1967,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_jvl8",
+      "title": "Standards Act",
+      "year": 1994,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_w3rz",
+      "title": "Weights and Measures Act",
+      "year": 1994,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_5u6r",
+      "title": "Food and Drugs Act",
+      "year": 1965,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_ew2j",
+      "title": "Public Health Act",
+      "year": 1965,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_1bbd",
+      "title": "Environmental Management Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_5roq",
+      "title": "Water Resources Management Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_23et",
+      "title": "Forestry Act",
+      "year": 2014,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_6iav",
+      "title": "Fisheries Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_4i9a",
+      "title": "Mines and Minerals Development Act",
+      "year": 2015,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_8o64",
+      "title": "Energy Regulation Act",
+      "year": 1995,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_bt4c",
+      "title": "Zambia Wildlife Act",
+      "year": 2015,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_mxg6",
+      "title": "National Heritage Conservation Act",
+      "year": 1989,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_vutx",
+      "title": "Employment Code Act",
+      "year": 2019,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_fvpj",
+      "title": "Minimum Wages and Conditions of Employment Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_mvnb",
+      "title": "Workers Compensation Act",
+      "year": 1999,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_zpky",
+      "title": "National Pension Scheme Act",
+      "year": 1996,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_djnl",
+      "title": "Occupational Health and Safety Act",
+      "year": 2010,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_1qqq",
+      "title": "Disability Equity Act",
+      "year": 2012,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_gbhw",
+      "title": "Education Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_ms1g",
+      "title": "Higher Education Act",
+      "year": 2013,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_wpb9",
+      "title": "Technical Education and Vocational Training Act",
+      "year": 1998,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270826654_vgc8",
+      "title": "Marriage Act",
+      "year": 1911,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ahnv",
+      "title": "Constitution of Zambia",
+      "year": 2016,
+      "category": "Constitutional",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_o3yv",
+      "title": "Penal Code Act",
+      "year": 1930,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ko3n",
+      "title": "Criminal Procedure Code Act",
+      "year": 1930,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_qwcq",
+      "title": "Anti-Corruption Act",
+      "year": 2012,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_mmt7",
+      "title": "Anti-Terrorism and Non-Proliferation Act",
+      "year": 2018,
+      "category": "Criminal",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_zjgj",
+      "title": "Anti-Gender-Based Violence Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_s97c",
+      "title": "Public Order Act",
+      "year": 1955,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_krp3",
+      "title": "Police Act",
+      "year": 1995,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_gsie",
+      "title": "Defence Act",
+      "year": 1964,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_egra",
+      "title": "Presidential Emoluments Act",
+      "year": 2015,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_s819",
+      "title": "Elections Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_hluo",
+      "title": "Electoral Commission of Zambia Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_5mqc",
+      "title": "Political Parties Act",
+      "year": 2016,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_gjxp",
+      "title": "Local Government Act",
+      "year": 2019,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_qse8",
+      "title": "Public Finance Management Act",
+      "year": 2018,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_npm2",
+      "title": "Audit Service Act",
+      "year": 1980,
+      "category": "Governance",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ssjz",
+      "title": "Revenue Authority Act",
+      "year": 1993,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_2o20",
+      "title": "Income Tax Act",
+      "year": 1966,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_9tdu",
+      "title": "Value Added Tax Act",
+      "year": 1995,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ipex",
+      "title": "Customs and Excise Act",
+      "year": 1965,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_mx8i",
+      "title": "Banking and Financial Services Act",
+      "year": 2026,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_k063",
+      "title": "Bank of Zambia Act",
+      "year": 1996,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ylez",
+      "title": "Securities Act",
+      "year": 1993,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_nkp4",
+      "title": "Insurance Act",
+      "year": 1997,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_3nx0",
+      "title": "Companies Act",
+      "year": 1994,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_qqxr",
+      "title": "Partnership Act",
+      "year": 1938,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_fsbm",
+      "title": "Competition and Consumer Protection Act",
+      "year": 2010,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ikfg",
+      "title": "Bankruptcy Act",
+      "year": 1967,
+      "category": "Commerce",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_2o68",
+      "title": "Standards Act",
+      "year": 1994,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_a8vo",
+      "title": "Weights and Measures Act",
+      "year": 1994,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_k527",
+      "title": "Food and Drugs Act",
+      "year": 1965,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_l9ff",
+      "title": "Public Health Act",
+      "year": 1965,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_mg7k",
+      "title": "Environmental Management Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_4v65",
+      "title": "Water Resources Management Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_iupw",
+      "title": "Forestry Act",
+      "year": 2014,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_v7gh",
+      "title": "Fisheries Act",
+      "year": 2011,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_tjhv",
+      "title": "Mines and Minerals Development Act",
+      "year": 2015,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_205s",
+      "title": "Energy Regulation Act",
+      "year": 1995,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_eeoa",
+      "title": "Zambia Wildlife Act",
+      "year": 2015,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_2ubd",
+      "title": "National Heritage Conservation Act",
+      "year": 1989,
+      "category": "Regulatory",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_ckjy",
+      "title": "Employment Code Act",
+      "year": 2019,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_jqri",
+      "title": "Minimum Wages and Conditions of Employment Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_cazb",
+      "title": "Workers Compensation Act",
+      "year": 1999,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_o3gc",
+      "title": "National Pension Scheme Act",
+      "year": 1996,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_lap1",
+      "title": "Occupational Health and Safety Act",
+      "year": 2010,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_dj1r",
+      "title": "Disability Equity Act",
+      "year": 2012,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_jgnh",
+      "title": "Education Act",
+      "year": 2011,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_jg4n",
+      "title": "Higher Education Act",
+      "year": 2013,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_67e1",
+      "title": "Technical Education and Vocational Training Act",
+      "year": 1998,
+      "category": "Social",
+      "type": "law"
+    },
+    {
+      "id": "law_1786270843650_7y14",
+      "title": "Marriage Act",
+      "year": 1911,
+      "category": "Social",
+      "type": "law"
+    }
+  ],
+  "content": []
+}
