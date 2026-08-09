@@ -30,53 +30,58 @@ app.get("/api/auth/sso", (req, res) => {
 app.get("/api/auth/sso/callback", async (req, res) => {
   const { sso_token } = req.query;
   if (!sso_token) return res.redirect("/login?error=sso_failed");
-  try {
-    // Verify sso_token with AllID
-    const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${sso_token}`, { signal: AbortSignal.timeout(15000) });
-    const d = await r.json();
-    if (!d.ok) return res.redirect("/login?error=sso_failed");
-
-    // Find or create local user
-    let user = findUserByEmail(d.student.email);
-    if (!user) {
-      createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
-      user = findUserByEmail(d.student.email);
+  let lastErr;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${sso_token}`, { signal: AbortSignal.timeout(20000) });
+      const d = await r.json();
+      if (!d.ok) return res.redirect("/login?error=sso_failed");
+      let user = findUserByEmail(d.student.email);
+      if (!user) {
+        createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
+        user = findUserByEmail(d.student.email);
+      }
+      const token = signToken({ userId: user.id, email: user.email });
+      const tokens = readJSON("tokens.json") || [];
+      tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+      writeJSON("tokens.json", tokens);
+      res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
+      return res.redirect("/dashboard");
+    } catch (e) {
+      lastErr = e;
+      await new Promise((r) => setTimeout(r, 2000));
     }
-
-    // Issue ShimSearch token + set cookie
-    const token = signToken({ userId: user.id, email: user.email });
-    const tokens = readJSON("tokens.json") || [];
-    tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
-    writeJSON("tokens.json", tokens);
-    res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
-    res.redirect("/dashboard");
-  } catch {
-    res.redirect("/login?error=sso_failed");
   }
+  res.redirect("/login?error=sso_failed");
 });
-
 app.post("/api/auth/sso/allid", async (req, res) => {
   const { token } = req.body || {};
   if (!token) return res.status(400).json({ error: "token required" });
-  try {
-    const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${token}`, { signal: AbortSignal.timeout(15000) });
-    const d = await r.json();
-    if (!d.ok) return res.status(401).json({ error: "invalid token" });
-    let user = findUserByEmail(d.student.email);
-    if (!user) {
-      createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
-      user = findUserByEmail(d.student.email);
+  // Retry logic for cold starts
+  let lastErr;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${token}`, { signal: AbortSignal.timeout(20000) });
+      const d = await r.json();
+      if (!d.ok) return res.status(401).json({ error: "invalid token" });
+      let user = findUserByEmail(d.student.email);
+      if (!user) {
+        createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
+        user = findUserByEmail(d.student.email);
+      }
+      const tokens = readJSON("tokens.json") || [];
+      const ssToken = "sst_sso_" + crypto.randomBytes(24).toString("hex");
+      tokens.push({ token: ssToken, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+      writeJSON("tokens.json", tokens);
+      res.json({ token: ssToken, user: publicUser(user) });
+      return;
+    } catch (e) {
+      lastErr = e;
+      await new Promise((r) => setTimeout(r, 2000)); // wait 2s between retries
     }
-    const tokens = readJSON("tokens.json") || [];
-    const ssToken = "sst_sso_" + crypto.randomBytes(24).toString("hex");
-    tokens.push({ token: ssToken, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
-    writeJSON("tokens.json", tokens);
-    res.json({ token: ssToken, user: publicUser(user) });
-  } catch (e) {
-    res.status(500).json({ error: "sso verification failed" });
   }
+  res.status(500).json({ error: "sso verification failed" });
 });
-
 /* ── auth (hardened) ───────────────────────────────── */
 app.post("/api/auth/register", authLimiter, (req, res) => {
   const { name, email, password } = req.body || {};
