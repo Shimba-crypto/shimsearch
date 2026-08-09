@@ -2,15 +2,52 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../lib/usePageTitle";
 
-export default function Dashboard({ token, user }: { token: string; user: any }) {
+const ALLID = "https://allid.onrender.com";
+
+export default function Dashboard({ token, user, setToken }: { token: string; user: any; setToken?: (t: string) => void; }) {
   usePageTitle("Dashboard");
   const [sub, setSub] = useState<any>(null);
   const [usage, setUsage] = useState<any>(null);
+  const [ssoStatus, setSsoStatus] = useState("");
 
   useEffect(() => {
+    // Handle SSO login
+    const params = new URLSearchParams(window.location.search);
+    const ssoToken = params.get("sso_token");
+    if (params.get("sso") === "1" && ssoToken && setToken) {
+      setSsoStatus("verifying...");
+      fetch(`${ALLID}/api/sso/verify?sso_token=${ssoToken}`)
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.ok) {
+            // Create local session via SSO
+            return fetch("/api/auth/sso/allid", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ token: ssoToken }),
+            }).then((r) => r.json());
+          }
+          throw new Error("invalid");
+        })
+        .then((d) => {
+          if (d.token) {
+            setToken(d.token);
+            window.history.replaceState({}, "", "/dashboard");
+          } else {
+            setSsoStatus("sso failed");
+          }
+        })
+        .catch(() => setSsoStatus("sso failed"));
+    }
+  }, [setToken]);
+
+  useEffect(() => {
+    if (!token) return;
     fetch("/api/billing/subscription", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
     fetch("/api/billing/usage", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
   }, [token]);
+
+  if (ssoStatus === "verifying...") return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Verifying AllID login...</p></div>;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-10">

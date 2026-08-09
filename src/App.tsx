@@ -46,7 +46,7 @@ export default function App() {
         <Route path="/pricing" element={<Pricing token={token} />} />
         <Route path="/login" element={<Login onLogin={(t) => setToken(t)} />} />
         <Route path="/register" element={<Register onLogin={(t) => setToken(t)} />} />
-        <Route path="/dashboard" element={token ? <Dashboard token={token} user={user} /> : <Login onLogin={(t) => setToken(t)} />} />
+        <Route path="/dashboard" element={token ? <Dashboard token={token} user={user} setToken={setToken} /> : <Login onLogin={(t) => setToken(t)} />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="*" element={<NotFound />} />
