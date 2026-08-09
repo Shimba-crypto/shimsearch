@@ -4,7 +4,7 @@ import path from "path";
 import crypto from "crypto";
 import { fileURLToPath } from "url";
 import { readJSON, writeJSON } from "./storage.js";
-import { createUser, loginUser, verify2FA, verifyToken, requireAuth, logoutUser, upgradeTier, publicUser, findUserByEmail, seedAdminIfNeeded } from "./auth.js";
+import { createUser, loginUser, verify2FA, verifyToken, requireAuth, logoutUser, upgradeTier, publicUser, findUserByEmail, seedAdminIfNeeded, createToken } from "./auth.js";
 import { freeLimiter, authLimiter, securityHeaders, sanitize, validEmail, trackUsage, getUsage } from "./security.js";
 import { search, suggest, indexPapers, indexSchools, indexHealth, indexLaws, getStats, seedFromEcosystem } from "./search.js";
 import { createProSubscription, getSubscription, isPro, chargeQuery, getBilling, checkQuota, priceList } from "./billing.js";
@@ -44,14 +44,11 @@ app.post("/api/auth/sso/verify", async (req, res) => {
       createUser({ name, email, password: crypto.randomBytes(16).toString("hex") });
       user = findUserByEmail(email);
     }
-    const token = signToken({ userId: user.id, email: user.email });
-    const tokens = readJSON("tokens.json") || [];
-    tokens.push({ token, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
-    writeJSON("tokens.json", tokens);
+    const token = createToken(user.id);
     res.cookie("nsp_token", token, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
     res.json({ ok: true, token, user: publicUser(user) });
-  } catch {
-    res.status(500).json({ error: "failed" });
+  } catch (e) {
+    res.status(500).json({ error: "failed", detail: e.message });
   }
 });
 app.post("/api/auth/sso/allid", async (req, res) => {

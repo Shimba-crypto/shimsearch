@@ -85,6 +85,15 @@ function completeLogin(user) {
   return { token, user: publicUser(user) };
 }
 
+// Generate a token for a user (used by SSO and other flows)
+export function createToken(userId) {
+  const token = uid("sst") + crypto.randomBytes(16).toString("hex");
+  const tokens = readJSON("tokens.json") || [];
+  tokens.push({ token, userId, expiresAt: Date.now() + TOKEN_TTL, createdAt: new Date().toISOString() });
+  writeJSON("tokens.json", tokens);
+  return token;
+}
+
 export function verifyToken(token) {
   if (!token) return null;
   const tokens = readJSON("tokens.json") || [];
