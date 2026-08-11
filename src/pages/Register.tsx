@@ -30,7 +30,7 @@ export default function Register({ onLogin }: { onLogin: (t: string) => void }) 
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="Email" className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm" />
         <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} required minLength={8} placeholder="Password (8+ chars, upper+lower+digit+special)" className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm" />
         {err && <p className="text-red-600 text-sm">{err}</p>}
-        <button disabled={loading} className="w-full bg-gray-900 text-white text-sm font-medium py-2 rounded-md hover:bg-gray-700 disabled:opacity-50">{loading ? "..." : "Sign up"}</button>
+        <button disabled={loading} className="w-full bg-[#1a73e8] text-white text-sm font-medium py-2.5 rounded-full hover:bg-[#1765cc] disabled:opacity-50">{loading ? "..." : "Sign up"}</button>
       </form>
       <p className="text-sm text-gray-500 mt-4 text-center">Have an account? <Link to="/login" className="text-gray-900 font-medium hover:underline">Log in</Link></p>
     </div>

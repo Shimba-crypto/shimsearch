@@ -30,7 +30,7 @@ export default function Admin() {
         </div>
       )}
       <div className="mt-6">
-        <button onClick={reindex} className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm">Reindex from ecosystem</button>
+        <button onClick={reindex} className="bg-[#1a73e8] text-white px-4 py-2 rounded-full text-sm">Reindex from ecosystem</button>
         {msg && <p className="text-sm text-gray-500 mt-2">{msg}</p>}
       </div>
     </div>

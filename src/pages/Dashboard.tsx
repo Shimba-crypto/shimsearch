@@ -10,12 +10,12 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
 
   useEffect(() => {
     // Normal auth: try cookie first, then token
-    fetch("/api/user/me")
+    fetch("/api/auth/me")
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (d) { setToken?.(d.token || ""); setLoading(false); }
         else if (token) {
-          fetch("/api/user/me", { headers: { "X-User-Token": token } })
+          fetch("/api/auth/me", { headers: { "X-Search-Token": token } })
             .then((r) => (r.ok ? r.json() : null))
             .then((d2) => { if (d2) setToken?.(d2.token || ""); setLoading(false); })
             .catch(() => setLoading(false));
@@ -26,8 +26,8 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
 
   useEffect(() => {
     if (!token) return;
-    fetch("/api/billing/subscription", { headers: { "X-User-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
-    fetch("/api/billing/usage", { headers: { "X-User-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
+    fetch("/api/billing/subscription", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
+    fetch("/api/billing/usage", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
   }, [token]);
 
   if (loading) return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Loading...</p></div>;
@@ -45,7 +45,7 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
         <div className="mt-6 border border-blue-200 bg-blue-50 rounded-lg p-4">
           <p className="font-medium text-blue-900">Upgrade to Pro</p>
           <p className="text-sm text-blue-700 mt-1">Unlimited searches + API access for K50/month in NexasCoin.</p>
-          <Link to="/pricing" className="inline-block mt-3 text-sm bg-gray-900 text-white px-4 py-2 rounded-md">View Plans</Link>
+          <Link to="/pricing" className="inline-block mt-3 text-sm bg-[#1a73e8] text-white px-4 py-2 rounded-full">View Plans</Link>
         </div>
       )}
     </div>

@@ -17,7 +17,7 @@ export default function Pricing({ token }: { token: string }) {
             <h3 className="font-semibold capitalize">{tier}</h3>
             <p className="text-2xl font-bold mt-2">{p.price}</p>
             <p className="text-xs text-gray-500 mt-1">{p.limit}</p>
-            {tier !== "free" && <Link to={token ? "/dashboard" : "/login"} className="mt-4 block text-center text-sm bg-gray-900 text-white py-2 rounded-md">{token ? "Manage" : "Get Started"}</Link>}
+            {tier !== "free" && <Link to={token ? "/dashboard" : "/login"} className="mt-4 block text-center text-sm bg-[#1a73e8] text-white py-2 rounded-full">{token ? "Manage" : "Get Started"}</Link>}
           </div>
         ))}
       </div>
