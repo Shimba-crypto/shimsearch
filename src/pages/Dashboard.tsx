@@ -2,48 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../lib/usePageTitle";
 
-const ALLID = "https://allid.onrender.com";
-
 export default function Dashboard({ token, user, setToken }: { token: string; user: any; setToken?: (t: string) => void; }) {
   usePageTitle("Dashboard");
   const [sub, setSub] = useState<any>(null);
   const [usage, setUsage] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [ssoStatus, setSsoStatus] = useState("");
 
   useEffect(() => {
-    // Handle SSO token from URL (browser-based verification)
-    const params = new URLSearchParams(window.location.search);
-    const ssoToken = params.get("sso_token");
-    if (ssoToken) {
-      setSsoStatus("verifying...");
-      // Verify token with AllID directly from browser (CORS *)
-      fetch(`${ALLID}/api/sso/verify?sso_token=${ssoToken}`)
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.ok) {
-            // Create ShimSearch session
-            return fetch("/api/auth/sso/verify", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name: d.student.name, email: d.student.email }),
-            }).then((r) => r.json());
-          }
-          throw new Error("invalid");
-        })
-        .then((d) => {
-          if (d.ok && d.token) {
-            localStorage.setItem("ss-token", d.token);
-            setToken?.(d.token);
-            window.history.replaceState({}, "", "/dashboard");
-          } else {
-            setSsoStatus("sso failed");
-          }
-        })
-        .catch(() => setSsoStatus("sso failed"));
-      return;
-    }
-
     // Normal auth: try cookie first, then token
     fetch("/api/user/me")
       .then((r) => (r.ok ? r.json() : null))
@@ -65,7 +30,6 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
     fetch("/api/billing/usage", { headers: { "X-User-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
   }, [token]);
 
-  if (ssoStatus === "verifying...") return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Verifying AllID login...</p></div>;
   if (loading) return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Loading...</p></div>;
 
   return (

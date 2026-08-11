@@ -10,6 +10,7 @@ import { search, suggest, indexPapers, indexSchools, indexHealth, indexLaws, get
 import { createProSubscription, getSubscription, isPro, chargeQuery, getBilling, checkQuota, priceList } from "./billing.js";
 
 const ALLID = "https://allid.onrender.com";
+const AUTHER = "https://auther-zblr.onrender.com";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, "..", "dist");
 
@@ -22,16 +23,61 @@ app.get("/api/health", (req, res) => {
   res.json({ ok: true, time: new Date().toISOString(), ...getStats() });
 });
 
-/* ── SSO: Login with AllID ─────────────────────────── */
-app.get("/api/auth/sso", (req, res) => {
-  res.redirect(`${ALLID}/sso/authorize?client_id=shimsearch&redirect_uri=${encodeURIComponent("https://shimsearch.onrender.com/api/auth/sso/callback")}`);
+/* ── SSO: Login with Auther ─────────────────────── */
+// Verify an Auther token server-side, then create a local session.
+async function ssoAuther(req, res) {
+  const { token } = req.query;
+  if (!token) return res.redirect("/login?error=sso_failed");
+  try {
+    const r = await fetch(`${AUTHER}/api/auth/me`, {
+      headers: { "X-Auth-Token": token },
+      signal: AbortSignal.timeout(20000),
+    });
+    const d = await r.json();
+    if (!r.ok || !d.user) return res.redirect("/login?error=sso_failed");
+    let user = findUserByEmail(d.user.email);
+    if (!user) {
+      createUser({ name: d.user.name || d.user.email, email: d.user.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.user.email);
+    }
+    if (!user) return res.redirect("/login?error=sso_failed");
+    const local = createToken(user.id);
+    res.cookie("nsp_token", local, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
+    res.redirect("/dashboard?sso=1&token=" + local);
+  } catch {
+    res.redirect("/login?error=sso_failed");
+  }
+}
+
+app.get("/api/auth/sso", async (req, res) => {
+  if (req.query.token) return ssoAuther(req, res);
+  // No token: send the user to Auther's authorize page
+  res.redirect(`${AUTHER}/sso/authorize?client_id=shimsearch&redirect_uri=${encodeURIComponent("https://shimsearch.onrender.com/api/auth/sso/callback")}`);
 });
 
-app.get("/api/auth/sso/callback", (req, res) => {
-  const { sso_token } = req.query;
-  if (!sso_token) return res.redirect("/login?error=sso_failed");
-  // Redirect to dashboard with sso_token — browser verifies client-side (AllID has CORS *)
-  res.redirect(`/dashboard?sso_token=${sso_token}`);
+app.get("/api/auth/sso/callback", async (req, res) => {
+  const { code } = req.query;
+  if (!code) return res.redirect("/login?error=sso_failed");
+  try {
+    const r = await fetch(`${AUTHER}/sso/exchange`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+      signal: AbortSignal.timeout(20000),
+    });
+    const d = await r.json();
+    if (!d.ok || !d.user) return res.redirect("/login?error=sso_failed");
+    let user = findUserByEmail(d.user.email);
+    if (!user) {
+      createUser({ name: d.user.name || d.user.email, email: d.user.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.user.email);
+    }
+    const local = createToken(user.id);
+    res.cookie("nsp_token", local, { httpOnly: true, secure: true, sameSite: "lax", maxAge: 30 * 24 * 60 * 60 * 1000 });
+    res.redirect("/dashboard?sso=1&token=" + local);
+  } catch {
+    res.redirect("/login?error=sso_failed");
+  }
 });
 
 // Dashboard calls this after verifying sso_token with AllID client-side
@@ -54,30 +100,28 @@ app.post("/api/auth/sso/verify", async (req, res) => {
 app.post("/api/auth/sso/allid", async (req, res) => {
   const { token } = req.body || {};
   if (!token) return res.status(400).json({ error: "token required" });
-  // Retry logic for cold starts
-  let lastErr;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      const r = await fetch(`${ALLID}/api/sso/verify?sso_token=${token}`, { signal: AbortSignal.timeout(20000) });
-      const d = await r.json();
-      if (!d.ok) return res.status(401).json({ error: "invalid token" });
-      let user = findUserByEmail(d.student.email);
-      if (!user) {
-        createUser({ name: d.student.name, email: d.student.email, password: crypto.randomBytes(16).toString("hex") });
-        user = findUserByEmail(d.student.email);
-      }
-      const tokens = readJSON("tokens.json") || [];
-      const ssToken = "sst_sso_" + crypto.randomBytes(24).toString("hex");
-      tokens.push({ token: ssToken, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
-      writeJSON("tokens.json", tokens);
-      res.json({ token: ssToken, user: publicUser(user) });
-      return;
-    } catch (e) {
-      lastErr = e;
-      await new Promise((r) => setTimeout(r, 2000)); // wait 2s between retries
+  // Verify with Auther (backward-compatible alias)
+  try {
+    const r = await fetch(`${AUTHER}/api/auth/me`, {
+      headers: { "X-Auth-Token": token },
+      signal: AbortSignal.timeout(20000),
+    });
+    const d = await r.json();
+    if (!r.ok || !d.user) return res.status(401).json({ error: "invalid token" });
+    let user = findUserByEmail(d.user.email);
+    if (!user) {
+      createUser({ name: d.user.name || d.user.email, email: d.user.email, password: crypto.randomBytes(16).toString("hex") });
+      user = findUserByEmail(d.user.email);
     }
+    const tokens = readJSON("tokens.json") || [];
+    const ssToken = "sst_sso_" + crypto.randomBytes(24).toString("hex");
+    tokens.push({ token: ssToken, userId: user.id, expiresAt: Date.now() + 30 * 24 * 60 * 60 * 1000, createdAt: new Date().toISOString() });
+    writeJSON("tokens.json", tokens);
+    res.json({ token: ssToken, user: publicUser(user) });
+    return;
+  } catch {
+    res.status(500).json({ error: "sso verification failed" });
   }
-  res.status(500).json({ error: "sso verification failed" });
 });
 /* ── auth (hardened) ───────────────────────────────── */
 app.post("/api/auth/register", authLimiter, (req, res) => {
