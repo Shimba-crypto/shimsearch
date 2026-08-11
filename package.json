@@ -4,10 +4,14 @@
   "description": "ShimSearch — Search engine for Zambian education",
   "private": true,
   "type": "module",
+  "bin": {
+    "shimsearch": "cli/shimsearch.js"
+  },
   "scripts": {
     "dev": "node server/index.js & vite",
     "build": "vite build",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "cli": "node cli/shimsearch.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

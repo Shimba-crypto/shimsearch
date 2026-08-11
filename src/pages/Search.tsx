@@ -76,6 +76,10 @@ export default function Search({ token }: { token: string }) {
         {q && results && !results.error && (
           <p className="text-[13px] text-[#70757a] mb-5">
             About {results.total.toLocaleString()} results {results.tier === "free" && results.quota?.remaining !== Infinity ? `· ${results.quota.remaining.toLocaleString()} searches left today` : ""}
+            {results.reward?.credited && <span className="ml-2 inline-flex items-center gap-1 text-[#34a853] font-medium">+{results.reward.coins} NCN earned</span>}
+            {results.reward?.reason === "no-nexas-wallet" && (
+              <span className="ml-2"><a href="https://nexas-pay.onrender.com" target="_blank" rel="noreferrer" className="text-[#1a0dab] hover:underline">Earn {results.reward.coins} NCN/search — connect your Nexas wallet</a></span>
+            )}
           </p>
         )}
 
@@ -134,9 +138,13 @@ function Result({ r, q }: { r: any; q: string }) {
       <div className="text-[13px] leading-[20px] text-[#202124]">
         {u.domain}<span className="text-[#70757a]"> › {u.crumb}</span>
       </div>
-      <h3 className="text-[20px] leading-[26px] text-[#1a0dab] mt-[2px] hover:underline cursor-pointer">
-        {r.title || r.name}
-      </h3>
+      {r.type === "paper" ? (
+        <Link to={`/paper/${r.id}`}>
+          <h3 className="text-[20px] leading-[26px] text-[#1a0dab] mt-[2px] hover:underline">{r.title || r.name}</h3>
+        </Link>
+      ) : (
+        <h3 className="text-[20px] leading-[26px] text-[#1a0dab] mt-[2px]">{r.title || r.name}</h3>
+      )}
       <p className="text-[14px] leading-[22px] text-[#4d5156] mt-1">{snippet}</p>
     </div>
   );

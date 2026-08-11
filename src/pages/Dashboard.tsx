@@ -6,6 +6,7 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
   usePageTitle("Dashboard");
   const [sub, setSub] = useState<any>(null);
   const [usage, setUsage] = useState<any>(null);
+  const [rewards, setRewards] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,11 +14,11 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
     fetch("/api/auth/me")
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
-        if (d) { setToken?.(d.token || ""); setLoading(false); }
+        if (d) { setLoading(false); }
         else if (token) {
           fetch("/api/auth/me", { headers: { "X-Search-Token": token } })
             .then((r) => (r.ok ? r.json() : null))
-            .then((d2) => { if (d2) setToken?.(d2.token || ""); setLoading(false); })
+            .then((d2) => { setLoading(false); })
             .catch(() => setLoading(false));
         } else { setLoading(false); }
       })
@@ -28,6 +29,7 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
     if (!token) return;
     fetch("/api/billing/subscription", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setSub).catch(() => {});
     fetch("/api/billing/usage", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setUsage).catch(() => {});
+    fetch("/api/billing/rewards", { headers: { "X-Search-Token": token } }).then((r) => r.json()).then(setRewards).catch(() => {});
   }, [token]);
 
   if (loading) return <div className="max-w-md mx-auto px-6 py-24 text-center"><p className="text-gray-500">Loading...</p></div>;
@@ -40,6 +42,23 @@ export default function Dashboard({ token, user, setToken }: { token: string; us
         <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{sub?.tier || "free"}</p><p className="text-xs text-gray-500">Tier</p></div>
         <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{usage?.count || 0}</p><p className="text-xs text-gray-500">Searches today</p></div>
         <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{sub?.tier === "pro" ? "∞" : 1000 - (usage?.count || 0)}</p><p className="text-xs text-gray-500">Remaining</p></div>
+      </div>
+      <div className="mt-6 border rounded-lg p-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="font-medium">NexasCoin rewards</p>
+            <p className="text-sm text-gray-500 mt-1">Earn {rewards?.rate ?? 0.001} NCN per search (max {rewards?.cap ?? 100}/day).</p>
+          </div>
+          <div className="text-right">
+            <p className="text-2xl font-bold">{rewards?.totalNcn ?? 0} NCN</p>
+            <p className="text-xs text-gray-500">all time · {rewards?.todayNcn ?? 0} today</p>
+          </div>
+        </div>
+        {rewards?.walletLinked === false && (
+          <p className="text-sm mt-3 text-[#1a0dab]">
+            <a href="https://nexas-pay.onrender.com" target="_blank" rel="noreferrer" className="hover:underline">Create your Nexas wallet to start earning →</a>
+          </p>
+        )}
       </div>
       {sub?.tier !== "pro" && (
         <div className="mt-6 border border-blue-200 bg-blue-50 rounded-lg p-4">

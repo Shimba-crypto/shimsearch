@@ -6,8 +6,8 @@ import { fileURLToPath } from "url";
 import { readJSON, writeJSON } from "./storage.js";
 import { createUser, loginUser, verify2FA, verifyToken, requireAuth, logoutUser, upgradeTier, publicUser, findUserByEmail, seedAdminIfNeeded, createToken } from "./auth.js";
 import { freeLimiter, authLimiter, securityHeaders, sanitize, validEmail, trackUsage, getUsage } from "./security.js";
-import { search, suggest, indexPapers, indexSchools, indexHealth, indexLaws, getStats, seedFromEcosystem } from "./search.js";
-import { createProSubscription, getSubscription, isPro, chargeQuery, getBilling, checkQuota, priceList } from "./billing.js";
+import { search, suggest, indexPapers, indexSchools, indexHealth, indexLaws, getStats, seedFromEcosystem, getItem, relatedPapers, inferSubject } from "./search.js";
+import { createProSubscription, getSubscription, isPro, chargeQuery, getBilling, checkQuota, priceList, rewardSearch, getRewards, REWARD_NCN } from "./billing.js";
 
 const ALLID = "https://allid.onrender.com";
 const AUTHER = "https://auther-zblr.onrender.com";
@@ -154,7 +154,7 @@ app.post("/api/auth/logout", (req, res) => {
 app.get("/api/auth/me", requireAuth, (req, res) => res.json(publicUser(req.user)));
 
 /* ── search (rate-limited) ─────────────────────────── */
-app.get("/api/search", freeLimiter, (req, res) => {
+app.get("/api/search", freeLimiter, async (req, res) => {
   const user = verifyToken(req.headers["x-search-token"] || "");
   const tier = user?.tier || "free";
   const quota = checkQuota(user?.id || req.ip, tier);
@@ -164,7 +164,8 @@ app.get("/api/search", freeLimiter, (req, res) => {
   const vertical = ["all", "papers", "schools", "health", "laws"].includes(req.query.vertical) ? req.query.vertical : "all";
   const limit = Math.min(parseInt(req.query.limit) || 20, 50);
   const result = search(q, { vertical, limit });
-  res.json({ ...result, tier, quota });
+  const reward = user ? await rewardSearch(user) : null;
+  res.json({ ...result, tier, quota, reward });
 });
 
 app.get("/api/suggest", (req, res) => res.json({ suggestions: suggest(sanitize(req.query.q || "")) }));
@@ -174,22 +175,50 @@ app.get("/api/search/schools", freeLimiter, (req, res) => res.json(search(saniti
 app.get("/api/search/health", freeLimiter, (req, res) => res.json(search(sanitize(req.query.q || ""), { vertical: "health", limit: 20 })));
 app.get("/api/search/laws", freeLimiter, (req, res) => res.json(search(sanitize(req.query.q || ""), { vertical: "laws", limit: 20 })));
 
+app.get("/api/paper/:id", (req, res) => {
+  const item = getItem(sanitize(req.params.id));
+  if (!item) return res.status(404).json({ error: "not found" });
+  if (item.type === "paper") {
+    res.json({ ...item, subject: item.subject || inferSubject(item.title), related: relatedPapers(item) });
+  } else {
+    res.json(item);
+  }
+});
+
 /* ── billing (NexasPay) ────────────────────────────── */
 app.get("/api/pricing", (req, res) => res.json(priceList()));
 app.post("/api/billing/subscribe", requireAuth, (req, res) => res.json(createProSubscription(req.user.id, req.user.email)));
 app.get("/api/billing/subscription", requireAuth, (req, res) => res.json(getSubscription(req.user.id) || { tier: "free" }));
 app.get("/api/billing/usage", requireAuth, (req, res) => res.json(getUsage(req.user.id)));
+app.get("/api/billing/rewards", requireAuth, async (req, res) => {
+  const rewards = getRewards(req.user.id);
+  try {
+    const w = await fetch(`${process.env.NEXAS_PAY_URL || "https://nexas-pay.onrender.com"}/api/merchant/balance/${encodeURIComponent(req.user.email)}`, {
+      headers: { "X-Merchant-Key": process.env.NEXAS_MERCHANT_KEY || "np_9txq8poxi6_xwof2mc7ds" },
+      signal: AbortSignal.timeout(8000),
+    });
+    const d = await w.json().catch(() => ({}));
+    res.json({ ...rewards, walletLinked: d.exists === true, rate: REWARD_NCN });
+  } catch {
+    res.json({ ...rewards, walletLinked: null });
+  }
+});
 app.get("/api/billing", requireAuth, (req, res) => res.json(getBilling(req.user.id)));
 
 /* ── admin ─────────────────────────────────────────── */
-app.get("/api/admin/stats", (req, res) => {
+function requireAdmin(req, res, next) {
+  if (!req.user || req.user.role !== "admin") return res.status(403).json({ error: "admin only" });
+  next();
+}
+
+app.get("/api/admin/stats", requireAuth, requireAdmin, (req, res) => {
   const stats = getStats();
   const users = readJSON("users.json") || [];
   const subs = readJSON("subscriptions.json") || {};
   res.json({ ...stats, users: users.length, subscribers: Object.keys(subs).length });
 });
 
-app.post("/api/admin/reindex", async (req, res) => {
+app.post("/api/admin/reindex", requireAuth, requireAdmin, async (req, res) => {
   await seedFromEcosystem();
   res.json({ ok: true, ...getStats() });
 });

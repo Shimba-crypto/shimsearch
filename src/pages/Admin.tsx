@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import { usePageTitle } from "../lib/usePageTitle";
 
-export default function Admin() {
+export default function Admin({ token }: { token: string }) {
   usePageTitle("Admin");
   const [stats, setStats] = useState<any>(null);
   const [msg, setMsg] = useState("");
+  const [err, setErr] = useState("");
 
-  async function load() { setStats(await fetch("/api/admin/stats").then((r) => r.json())); }
+  const h = { "X-Search-Token": token } as any;
+  async function load() {
+    const r = await fetch("/api/admin/stats", { headers: h });
+    if (r.status === 401 || r.status === 403) { setErr("Admin access required."); return; }
+    setStats(await r.json());
+  }
   useEffect(() => { load(); }, []);
 
   async function reindex() {
     setMsg("indexing...");
-    const r = await fetch("/api/admin/reindex", { method: "POST" });
+    const r = await fetch("/api/admin/reindex", { method: "POST", headers: h });
     const d = await r.json();
     setMsg(`indexed: ${d.papers} papers, ${d.schools} schools, ${d.health} health, ${d.laws} laws`);
     load();
@@ -20,6 +26,7 @@ export default function Admin() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
       <h1 className="text-2xl font-semibold">Admin</h1>
+      {err && <p className="mt-4 text-red-600 text-sm">{err}</p>}
       {stats && (
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div className="border rounded-lg p-4 text-center"><p className="text-2xl font-bold">{stats.papers}</p><p className="text-xs text-gray-500">Papers</p></div>

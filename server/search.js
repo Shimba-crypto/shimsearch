@@ -12,6 +12,23 @@ function ensureIndex() {
 
 export function saveIndex() { writeJSON("search-index.json", INDEX); }
 
+// ── Subject inference ────────────────────────────────
+const SUBJECTS = [
+  "Mathematics", "English Language", "Science", "Biology", "Physics", "Chemistry",
+  "Geography", "History", "Civic Education", "Religious Education", "Computer Studies",
+  "Home Economics", "Art and Design", "Music", "Physical Education", "Social Studies",
+  "Agricultural Science", "Commerce", "Accounts", "Business Studies", "Integrated Science",
+  "Environmental Science", "Design and Technology", "Literature", "French", "Technology Studies",
+];
+
+function inferSubject(title) {
+  if (!title) return "";
+  const t = String(title);
+  return SUBJECTS.find((s) => t.toLowerCase().includes(s.toLowerCase())) || "";
+}
+
+export { inferSubject };
+
 // ── Indexing ─────────────────────────────────────────
 export function indexPapers(papers) {
   ensureIndex();
@@ -20,7 +37,7 @@ export function indexPapers(papers) {
       INDEX.papers.push({
         id: p.id || `paper_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
         title: (p.title || "").slice(0, 200),
-        subject: (p.subject || "").slice(0, 50),
+        subject: (p.subject || inferSubject(p.title) || "").slice(0, 50),
         grade: parseInt(p.grade) || 0,
         year: parseInt(p.year) || 0,
         source: p.source || "unknown",
@@ -148,6 +165,37 @@ export function suggest(query) {
   return [...suggestions];
 }
 
+export function getItem(id) {
+  ensureIndex();
+  if (!id) return null;
+  for (const list of [INDEX.papers, INDEX.schools, INDEX.health, INDEX.laws]) {
+    const found = list.find((x) => x.id === id);
+    if (found) return found;
+  }
+  return null;
+}
+
+export function relatedPapers(paper, limit = 6) {
+  ensureIndex();
+  const sameSubject = paper.subject
+    ? INDEX.papers.filter((p) => p.id !== paper.id && p.subject === paper.subject)
+    : [];
+  const others = sameSubject.length >= limit
+    ? sameSubject
+    : sameSubject.concat(
+        INDEX.papers.filter((p) => p.id !== paper.id && p.grade === paper.grade)
+      );
+  const seen = new Set();
+  const out = [];
+  for (const p of others) {
+    if (seen.has(p.id)) continue;
+    seen.add(p.id);
+    out.push(p);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
 export function getStats() {
   ensureIndex();
   return {
@@ -160,25 +208,32 @@ export function getStats() {
 }
 
 // ── Seed from ecosystem ──────────────────────────────
+async function fetchList(url) {
+  const r = await fetch(url);
+  if (!r.ok) return [];
+  const d = await r.json();
+  return Array.isArray(d) ? d : d.results || [];
+}
+
 export async function seedFromEcosystem() {
   // Pull from ShimbaData public API
   try {
-    const data = await fetch("https://shimbadata.onrender.com/api/sd/papers?limit=100").then((r) => r.json());
-    if (Array.isArray(data)) indexPapers(data.map((p) => ({ ...p, source: "ShimbaData" })));
+    const data = await fetchList("https://shimbadata.onrender.com/api/sd/papers?limit=100");
+    indexPapers(data.map((p) => ({ ...p, source: "ShimbaData" })));
   } catch {}
 
   try {
-    const schools = await fetch("https://shimbadata.onrender.com/api/sd/schools?limit=100").then((r) => r.json());
-    if (schools?.results) indexSchools(schools.results.map((s) => ({ ...s, type: "school" })));
+    const schools = await fetchList("https://shimbadata.onrender.com/api/sd/schools?lat=-13.5&lon=28.0&radiusKm=900&limit=200");
+    indexSchools(schools.map((s) => ({ ...s, type: "school" })));
   } catch {}
 
   try {
-    const health = await fetch("https://shimbadata.onrender.com/api/sd/health-facilities?limit=100").then((r) => r.json());
-    if (health?.results) indexHealth(health.results.map((h) => ({ ...h, type: h.type || "clinic" })));
+    const health = await fetchList("https://shimbadata.onrender.com/api/sd/health-facilities?lat=-13.5&lon=28.0&radiusKm=900&limit=200");
+    indexHealth(health.map((h) => ({ ...h, type: h.type || "clinic" })));
   } catch {}
 
   try {
-    const laws = await fetch("https://shimbadata.onrender.com/api/sd/laws?limit=50").then((r) => r.json());
-    if (laws?.results) indexLaws(laws.results);
+    const laws = await fetchList("https://shimbadata.onrender.com/api/sd/laws?limit=50");
+    indexLaws(laws);
   } catch {}
 }

@@ -22,8 +22,8 @@ export default function Layout({ token, user, logout }: { token?: string; user?:
             <Link to="/docs" className="hover:text-[#202124]">API Docs</Link>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 sm:ml-auto">
-            <Link to="/docs" className="hover:text-[#202124]">Privacy</Link>
-            <Link to="/docs" className="hover:text-[#202124]">Terms</Link>
+            <Link to="/privacy" className="hover:text-[#202124]">Privacy</Link>
+            <Link to="/terms" className="hover:text-[#202124]">Terms</Link>
             <Link to="/search" className="hover:text-[#202124]">Search</Link>
           </div>
         </div>

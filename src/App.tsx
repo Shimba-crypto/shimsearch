@@ -9,7 +9,10 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 import Docs from "./pages/Docs";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import Paper from "./pages/Paper";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("ss-token") || "");
@@ -43,12 +46,15 @@ export default function App() {
       <Route element={<Layout token={token} user={user} logout={() => setToken("")} />}>
         <Route path="/" element={<Landing />} />
         <Route path="/search" element={<Search token={token} />} />
+        <Route path="/paper/:id" element={<Paper token={token} />} />
         <Route path="/pricing" element={<Pricing token={token} />} />
         <Route path="/login" element={<Login onLogin={(t) => setToken(t)} />} />
         <Route path="/register" element={<Register onLogin={(t) => setToken(t)} />} />
         <Route path="/dashboard" element={token ? <Dashboard token={token} user={user} setToken={setToken} /> : <Login onLogin={(t) => setToken(t)} />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<Admin token={token} />} />
         <Route path="/docs" element={<Docs />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

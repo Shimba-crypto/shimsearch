@@ -5,10 +5,21 @@ export default function Docs() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-10">
       <h1 className="text-2xl font-semibold">API Documentation</h1>
-      <p className="text-sm text-gray-500 mt-1">Search everything Zambian education via REST API.</p>
+      <p className="text-sm text-gray-500 mt-1">Search everything Zambian education via REST API or the free CLI.</p>
       <div className="mt-6 space-y-4">
+        <Section title="CLI (free)" method="SH" path="npm install -g shimsearch">
+          {`shimsearch "mathematics"                 # free search, no key needed
+shimsearch "Lusaka" --vertical schools --limit 5
+shimsearch "papers" --token sst_xxx --json        # logged-in: earns NexasCoin
+shimsearch --suggest "math"`}
+        </Section>
+        <Section title="Earn NexasCoin" method="NCN" path="0.001 NCN per search">
+          {`Logged-in users earn 0.001 NexasCoin per search (max 100 rewarded/day).
+Rewards only go to accounts with a Nexas wallet (same email) at
+https://nexas-pay.onrender.com — no wallet, no rewards.`}
+        </Section>
         <Section title="Search" method="GET" path="/api/search?q=mathematics&vertical=papers">
-          {`{ "results": [...], "total": 42, "tier": "free" }`}
+          {`{ "results": [...], "total": 42, "tier": "free", "reward": { "credited": true, "coins": 0.001 } }`}
         </Section>
         <Section title="Auto-complete" method="GET" path="/api/suggest?q=math">
           {`{ "suggestions": ["Mathematics", "Maths Paper 1", ...] }`}
