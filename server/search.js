@@ -58,6 +58,9 @@ export function indexSchools(schools) {
         name: (s.name || "").slice(0, 200),
         province: (s.province || "").slice(0, 50),
         district: (s.district || "").slice(0, 50),
+        amenity: (s.amenity || "").slice(0, 50),
+        operator: (s.operator || "").slice(0, 120),
+        level: (s.level || "").slice(0, 50),
         type: s.type || "school",
         lat: parseFloat(s.lat) || 0,
         lon: parseFloat(s.lon) || 0,
@@ -135,7 +138,7 @@ export function search(query, { vertical = "all", limit = 20, offset = 0 } = {})
     results = results.concat(searchIn(INDEX.papers, ["title", "subject"]));
   }
   if (vertical === "all" || vertical === "schools") {
-    results = results.concat(searchIn(INDEX.schools, ["name", "province", "district"]));
+    results = results.concat(searchIn(INDEX.schools, ["name", "province", "district", "amenity", "operator", "level"]));
   }
   if (vertical === "all" || vertical === "health") {
     results = results.concat(searchIn(INDEX.health, ["name", "type", "province"]));
@@ -216,24 +219,24 @@ async function fetchList(url) {
 }
 
 export async function seedFromEcosystem() {
-  // Pull from ShimbaData public API
+  // Pull from ShimbaData public API (no limit — index the full datasets)
   try {
-    const data = await fetchList("https://shimbadata.onrender.com/api/sd/papers?limit=100");
+    const data = await fetchList("https://shimbadata.onrender.com/api/sd/papers");
     indexPapers(data.map((p) => ({ ...p, source: "ShimbaData" })));
   } catch {}
 
   try {
-    const schools = await fetchList("https://shimbadata.onrender.com/api/sd/schools?lat=-13.5&lon=28.0&radiusKm=900&limit=200");
+    const schools = await fetchList("https://shimbadata.onrender.com/api/sd/schools?lat=-13.5&lon=28.0&radiusKm=900");
     indexSchools(schools.map((s) => ({ ...s, type: "school" })));
   } catch {}
 
   try {
-    const health = await fetchList("https://shimbadata.onrender.com/api/sd/health-facilities?lat=-13.5&lon=28.0&radiusKm=900&limit=200");
+    const health = await fetchList("https://shimbadata.onrender.com/api/sd/health-facilities?lat=-13.5&lon=28.0&radiusKm=900");
     indexHealth(health.map((h) => ({ ...h, type: h.type || "clinic" })));
   } catch {}
 
   try {
-    const laws = await fetchList("https://shimbadata.onrender.com/api/sd/laws?limit=50");
+    const laws = await fetchList("https://shimbadata.onrender.com/api/sd/laws");
     indexLaws(laws);
   } catch {}
 }
